@@ -1,0 +1,159 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    background-color: #bec0ca; /* Change this to any color you prefer */
+    background-image: url('E:/Vcp1.jpg'); /* Change this to the URL of your background image */
+    background-size: cover;
+    background-position: center;
+}
+
+.custom-header {
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 600;
+    color: #070707;
+    align-items: center;
+}
+
+.video-container {
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Set a max-width if desired */
+    height: 60vh; /* Adjust height as needed */
+    position: relative;
+    border: 1px solid #ddd;
+    margin: 20px auto; /* Adjust margin as needed */
+    background-color: black;
+    overflow: hidden; /* Hide overflow to prevent scrollbars */
+}
+
+#video-thumbnail {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+#video, img {
+    width: 100%;
+    height: 100%;
+}
+
+.controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.controls button {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.left {
+    display: flex;
+    justify-content: space-between;
+}
+
+.video-timer {
+    color: #efefef;
+    margin-left: 15px;
+    font-size: 12px;
+}
+
+#separator {
+    margin: 0 5px;
+    font-size: 16px;
+    font-family: "Open sans";
+}
+
+.right {
+    display: flex;
+    align-items: center;
+}
+
+.fa-volume-up,
+.fa-solid {
+    font-size: small;
+    padding: 5px;
+    color: rgb(255, 255, 255);
+}
+
+button,
+input {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.volume-container {
+    display: flex;
+    align-items: center;
+}
+
+#volume {
+    width: 50px;
+    height: 3px;
+}
+
+#mute {
+    cursor: pointer;
+}
+
+.playback-line {
+    height: 4px;
+    background-color: #ddd;
+    width: 40%;
+    cursor: pointer;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: #0078d4;
+    transition: width 0.1s linear;
+}
+
+.video-container:hover .controls {
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .video-container {
+        width: 80%;
+        max-height: 70vh;
+    }
+}
+
+@media (min-width: 1024px) {
+    .video-container {
+        width: 70%;
+        max-height: 60vh;
+    }
+}
